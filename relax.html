@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>放松一下 · 程序员纪福瑞</title>
+<meta name="description" content="一个可以挂着的在线音乐放松页：自定义曲库、背景氛围、歌词与可视化，累了就来听会儿歌。">
+<meta name="keywords" content="在线音乐,放松,白噪音,音乐播放器,纪福瑞">
+<meta name="author" content="纪福瑞">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jifurui.github.io/relax.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="纪福瑞 · 个人主页">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="放松一下 · 程序员纪福瑞">
+<meta property="og:description" content="累了就来听会儿歌：在线曲库 + 氛围背景的放松页面。">
+<meta property="og:url" content="https://jifurui.github.io/relax.html">
+<meta name="twitter:card" content="summary">
+<link rel='stylesheet' href='style.css'>
+<script src='music-index.js'></script>
+</head>
+<body>
+
+<!-- 背景 -->
+<div class="bg" aria-hidden="true">
+  <div class="bg-core"></div>
+  <div class="bg-fade"></div>
+  <div class="bg-blobs">
+    <span class="blob r"></span>
+    <span class="blob b"></span>
+    <span class="blob p"></span>
+  </div>
+  <div class="bg-sweep"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-vignette"></div>
+</div>
+
+<!-- 鼠标特效层 -->
+<div id="cursor-layer" aria-hidden="true">
+  <div class="cursor-aura" id="aura"></div>
+  <div class="cursor-ring" id="ring"></div>
+  <div class="cursor-core" id="core"></div>
+</div>
+
+<!-- 导航 -->
+<header class="nav">
+  <div class="nav-progress" id="navProgress"><i></i></div>
+  <a href="index.html" style="text-decoration:none">
+    <div class="logo"><span class="dot"></span>JIFURUI&nbsp;/&nbsp;DEV</div>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html#about">关于我</a>
+    <a href="index.html#skills">我的能力</a>
+    <a href="projects.html">我的项目</a>
+    <a href="relax.html" style="color:#fff;">放松一下</a>
+    <a href="index.html#contact">联系合作</a>
+  </nav>
+  <a href="index.html" style="text-decoration:none">
+    <button class="btn" style="padding:11px 22px;font-size:13.5px;">回到首页</button>
+  </a>
+</header>
+
+<!-- 页头 -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb reveal">
+      <a href="index.html">首页</a><span>/</span><span>放松一下</span>
+    </div>
+    <h1 class="page-title reveal">放松一下</h1>
+    <p class="sec-sub ash reveal">
+      写代码写累了就进来待一会儿。这里没有背景音乐播放器，
+      点开列表里任意一首就会开始播放，想留着就点右侧下载。
+    </p>
+    <div class="file-tip reveal" id="rl-tip" hidden>
+      当前是用 <code>file://</code> 直接打开的，浏览器会禁止网页自动下载（点「下载」没反应）。<br>
+      请双击根目录的 <b>启动本地服务器.bat</b>，用 <code>http://localhost:8000</code> 打开本页，下载就正常了。
+    </div>
+  </div>
+</section>
+
+<section class="section rl-section">
+  <div class="wrap">
+    <div class="dl-tools reveal">
+      <input class="dl-search" id="rl-search" type="search" placeholder="搜索歌名 / 标签…" aria-label="搜索音乐">
+      <label class="music-file rl-add" for="rl-input">+ 添加本地音乐
+        <input type="file" id="rl-input" accept="audio/*" multiple hidden>
+      </label>
+    </div>
+
+    <div class="rl-count ash reveal">
+      <span id="rl-num">0</span> 首可听 · 点卡片播放，↓ 下载
+      <span class="rl-upd" id="rl-upd"></span>
+    </div>
+
+    <div class="rl-list" id="rl-list"></div>
+
+    <div class="dl-empty reveal" id="rl-empty" hidden>
+      这里还没有音乐。把 mp3 直接拖进站点的 <b>music</b> 文件夹，
+      然后双击根目录的 <b>更新音乐索引.bat</b>，再刷新本页就会自动全部列出来。<br>
+      临时试听也可以点右上角「+ 添加本地音乐」直接选本地音频（可多选，刷新前一直可听可下载）。
+    </div>
+
+    <div class="note reveal">
+      <b>挂音乐的流程：</b>把 mp3 拖进 <b>music</b> 文件夹（可再建子文件夹分类）
+      → 双击根目录的 <b>更新音乐索引.bat</b>
+      → 本页几秒内自动出现，点开即播、可下载。
+    </div>
+  </div>
+</section>
+
+<footer class="rl-footer">
+  © 2026 程序员纪福瑞 · JIFURUI — 本页不自动播放，声音只在你点开某一首时响起。
+</footer>
+
+<!-- 播放条（本页专属，不是背景音乐播放器） -->
+<div class="rl-player" id="rl-player">
+  <div class="rl-now">
+    <div class="rl-cover" id="rl-cover">♪</div>
+    <div class="rl-meta">
+      <div class="rl-title" id="rl-title">还没有播放</div>
+      <div class="rl-sub" id="rl-sub">点上方任意一首开始</div>
+    </div>
+  </div>
+
+  <div class="rl-center">
+    <div class="rl-ctrl">
+      <button class="mini" id="rl-prev" title="上一首">⏮</button>
+      <button class="mini wide" id="rl-play" title="播放 / 暂停">▶</button>
+      <button class="mini" id="rl-next" title="下一首">⏭</button>
+    </div>
+    <div class="rl-prog">
+      <!-- 律动与进度合一：canvas 画实时频谱波形，透明 range 叠在上面负责点击/拖动/键盘 -->
+      <div class="rl-viz" id="rl-viz">
+        <canvas id="rl-viz-cv" aria-hidden="true"></canvas>
+        <input type="range" class="music-range rl-seek" id="rl-seek" min="0" max="1000" value="0" step="1" aria-label="播放进度">
+      </div>
+      <div class="music-time"><span id="rl-cur">0:00</span><span id="rl-dur">0:00</span></div>
+    </div>
+  </div>
+
+  <div class="rl-right">
+    <div class="music-row">
+      <span class="music-label">音量</span>
+      <input type="range" class="music-range rl-vol" id="rl-vol" min="0" max="100" value="70" step="1" aria-label="音量">
+    </div>
+    <a class="dl-btn rl-dl" id="rl-dl" download href="#">下载本首</a>
+  </div>
+</div>
+<audio id="rl-audio" preload="metadata"></audio>
+
+<!-- Toast -->
+<div id="toast" style="
+  position:fixed; left:50%; bottom:44px; transform:translate(-50%,30px);
+  padding:14px 26px; border-radius:999px; z-index:99;
+  background:linear-gradient(100deg,var(--red),var(--blue));
+  color:#fff; font-weight:700; font-size:14px; letter-spacing:.06em;
+  box-shadow:0 16px 40px rgba(0,0,0,.5);
+  opacity:0; pointer-events:none; transition:opacity .4s, transform .4s;">
+</div>
+
+<script src='cursor.js'></script>
+<script src='progress.js'></script>
+<script src='relax.js'></script>
+</body>
+</html>

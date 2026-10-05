@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的项目 · 程序员纪福瑞</title>
+<meta name="description" content="纪福瑞的项目集：C 语言程序、Windows 批处理与脚本工具、VBS 小工具等 200+ 自制作品，全部可在线预览与下载。">
+<meta name="keywords" content="纪福瑞,项目集,C语言程序,批处理脚本,VBS小工具,源码下载">
+<meta name="author" content="纪福瑞">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jifurui.github.io/projects.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="纪福瑞 · 个人主页">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="我的项目 · 程序员纪福瑞">
+<meta property="og:description" content="200+ 自制作品：C 语言程序、批处理脚本、VBS 工具，支持在线预览与下载。">
+<meta property="og:url" content="https://jifurui.github.io/projects.html">
+<meta name="twitter:card" content="summary">
+<link rel='stylesheet' href='style.css'>
+<script src='files-index.js'></script>
+</head>
+<body>
+
+<!-- 背景 -->
+<div class="bg" aria-hidden="true">
+  <div class="bg-core"></div>
+  <div class="bg-fade"></div>
+  <div class="bg-blobs">
+    <span class="blob r"></span>
+    <span class="blob b"></span>
+    <span class="blob p"></span>
+  </div>
+  <div class="bg-sweep"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-vignette"></div>
+</div>
+
+<!-- 鼠标特效层 -->
+<div id="cursor-layer" aria-hidden="true">
+  <div class="cursor-aura" id="aura"></div>
+  <div class="cursor-ring" id="ring"></div>
+  <div class="cursor-core" id="core"></div>
+</div>
+
+<!-- 导航 -->
+<header class="nav">
+  <div class="nav-progress" id="navProgress"><i></i></div>
+  <a href="index.html" style="text-decoration:none">
+    <div class="logo"><span class="dot"></span>JIFURUI&nbsp;/&nbsp;DEV</div>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html#about">关于我</a>
+    <a href="index.html#skills">我的能力</a>
+    <a href="projects.html" style="color:#fff;">我的项目</a>
+    <a href="relax.html">放松一下</a>
+    <a href="index.html#path">里程碑</a>
+    <a href="index.html#contact">联系合作</a>
+  </nav>
+  <a href="index.html#contact" style="text-decoration:none">
+    <button class="btn" style="padding:11px 22px;font-size:13.5px;">m is GeYan</button>
+  </a>
+</header>
+
+<!-- 页头 -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumb reveal">
+      <a href="index.html">首页</a><span>/</span><span>我的项目</span>
+    </div>
+    <h1 class="page-title reveal">我的项目</h1>
+    <p class="sec-sub ash reveal">
+      从命令行脚本到完整站点，每一个都是为了解决真实问题而写出来的。
+      下面挑了几类有代表性的。
+    </p>
+    <div class="filters reveal">
+      <span class="tag on" data-filter="all">全部 ALL</span>
+      <span class="tag" data-filter="web">网页 / 前端</span>
+      <span class="tag" data-filter="script">脚本工具</span>
+      <span class="tag" data-filter="native">桌面原生</span>
+      <span class="tag" data-filter="ops">运维 / 维修</span>
+    </div>
+  </div>
+</section>
+
+<!-- 项目列表 -->
+<section class="section" style="padding-top:20px;">
+  <div class="wrap">
+    <div class="proj-grid">
+
+      <article class="proj reveal" data-cat="web">
+        <div class="proj-top">
+          <span class="proj-idx">PROJECT 01</span>
+          <span class="proj-status done">已交付</span>
+        </div>
+        <h3 class="proj-title">个人主页 · 视觉展示站</h3>
+        <p class="proj-desc">
+          纯静态单页，手写光晕标题、自定义光标与背景动态糊化层，无任何第三方库。
+          全响应式，移动端自动降级为系统指针。
+        </p>
+        <div class="proj-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>响应式布局</span></div>
+        <div class="proj-foot"><span>2026</span><a class="proj-link" href="index.html">返回主页 →</a></div>
+      </article>
+
+      <article class="proj reveal" data-cat="ops">
+        <div class="proj-top">
+          <span class="proj-idx">PROJECT 02</span>
+          <span class="proj-status done">已交付</span>
+        </div>
+        <h3 class="proj-title">VBS 自动化运维脚本集</h3>
+        <p class="proj-desc">
+          用 VBS 写的一批批量处理脚本：文件归档、注册表读写、定时任务创建与日志输出，
+          把重复的手工操作压成一键执行。
+        </p>
+        <div class="proj-tags"><span>VBS语言</span><span>Windows</span><span>批处理</span></div>
+        <div class="proj-foot"><span>2025</span><span class="proj-link">本地工程</span></div>
+      </article>
+
+      <article class="proj reveal" data-cat="script">
+        <div class="proj-top">
+          <span class="proj-idx">PROJECT 03</span>
+          <span class="proj-status done">已交付</span>
+        </div>
+        <h3 class="proj-title">BAT 装机环境一键配置</h3>
+        <p class="proj-desc">
+          新机到手后的环境搭建脚本：常用软件静默安装、环境变量写入、网络与电源策略配置，
+          全程无人值守，配合日志便于排错。
+        </p>
+        <div class="proj-tags"><span>BAT语言</span><span>DOS</span><span>系统配置</span></div>
+        <div class="proj-foot"><span>2025</span><span class="proj-link">本地工程</span></div>
+      </article>
+
+      <article class="proj reveal" data-cat="native">
+        <div class="proj-top">
+          <span class="proj-idx">PROJECT 04</span>
+          <span class="proj-status doing">进行中</span>
+        </div>
+        <h3 class="proj-title">易语言桌面工具箱</h3>
+        <p class="proj-desc">
+          集成了文本批量处理、文件批量重命名与局域网连通性检测的小工具集合，
+          界面简洁、单文件可直接运行给同学使用。
+        </p>
+        <div class="proj-tags"><span>易语言</span><span>桌面 GUI</span><span>小工具</span></div>
+        <div class="proj-foot"><span>2026</span><span class="proj-link">待开源</span></div>
+      </article>
+
+      <article class="proj reveal" data-cat="script">
+        <div class="proj-top">
+          <span class="proj-idx">PROJECT 05</span>
+          <span class="proj-status done">已交付</span>
+        </div>
+        <h3 class="proj-title">C/C++ 算法与控制台练习集</h3>
+        <p class="proj-desc">
+          数据结构课程同步的练习实现：链表、栈队、排序与查找，附带简单的控制台小游戏，
+          全部统一 Makefile 构建、可一键编译。
+        </p>
+        <div class="proj-tags"><span>C与C++</span><span>数据结构</span><span>算法</span></div>
+        <div class="proj-foot"><span>2025</span><span class="proj-link">本地工程</span></div>
+      </article>
+
+      <article class="proj reveal" data-cat="ops">
+        <div class="proj-top">
+          <span class="proj-idx">PROJECT 06</span>
+          <span class="proj-status doing">进行中</span>
+        </div>
+        <h3 class="proj-title">计算机排障知识库</h3>
+        <p class="proj-desc">
+          把做过的软硬件排障案例整理成可检索条目：现象、定位过程、解决动作与复盘要点，
+          同时也是给别人做讲解时的提纲。
+        </p>
+        <div class="proj-tags"><span>计算机维修</span><span>软硬件理解</span><span>性能优化</span></div>
+        <div class="proj-foot"><span>2026</span><span class="proj-link">持续更新</span></div>
+      </article>
+
+    </div>
+
+    <div class="btns" style="justify-content:center; margin-top:52px;">
+      <a href="index.html" style="text-decoration:none">
+        <button class="btn">返回主页 <span class="arrow">→</span></button>
+      </a>
+      <button class="btn ghost" data-copy="13080095649@163.com" data-toast="邮箱已复制：13080095649@163.com">联系我</button>
+      <button class="btn ghost" data-scroll="#downloads">资源下载 ↓</button>
+    </div>
+  </div>
+</section>
+
+<!-- 资源下载：文件清单来自 files-index.js（双击「更新文件索引.bat」重新生成） -->
+<section class="section" id="downloads" style="padding-top:8px;">
+  <div class="wrap">
+    <div class="dl-head reveal">
+      <h2 class="dl-title">资源下载 <span class="dl-count" id="dl-count"></span></h2>
+      <p class="sec-sub ash">
+        这里挂着我写过的全部代码、脚本和小程序，单击「下载」即可存到本地。
+        新增文件只要丢进 <b>files/</b> 文件夹，双击根目录的 <b>更新文件索引.bat</b> 就会自动出现在这里。
+      </p>
+    </div>
+    <div class="dl-tools reveal">
+      <input type="search" class="dl-search" id="dl-search" autocomplete="off"
+             placeholder="搜索文件…（试试 贪吃蛇 / vbs / 计算器 / 扫雷）">
+      <button class="btn ghost dl-batch" id="dl-batch" type="button">下载筛选结果</button>
+    </div>
+    <div class="file-tip reveal" hidden>
+      当前是用 <code>file://</code> 直接打开的，浏览器禁止网页自动下载（点「下载」没反应）。<br>
+      请双击根目录的 <b>启动本地服务器.bat</b>，用 <code>http://localhost:8000</code> 打开本页，下载就正常了。
+    </div>
+    <div class="dl-tabs reveal" id="dl-tabs"></div>
+    <div class="dl-grid" id="dl-grid"></div>
+    <div class="dl-more-wrap">
+      <button class="btn ghost" id="dl-more" type="button" hidden>加载更多</button>
+    </div>
+    <div class="dl-empty" id="dl-empty" hidden>
+      还没有挂上任何文件 —— 把文件放进 <b>files/</b> 文件夹，然后双击根目录的 <b>更新文件索引.bat</b>，刷新即可出现。
+    </div>
+
+    <!--SEO-LIST:START-->
+    <details class="seo-list">
+      <summary>全部文件索引（154 个，0.07 MB）</summary>
+      <div class="seo-files">
+      <a href="files/2048.c">2048.c</a>
+      <a href="files/ASCII码值转换.c">ASCII码值转换.c</a>
+      <a href="files/cmd输出.c">cmd输出.c</a>
+      <a href="files/c语言创文件.c">c语言创文件.c</a>
+      <a href="files/GT跳转.c">GT跳转.c</a>
+      <a href="files/爱心.c">爱心.c</a>
+      <a href="files/按任意键继续.c">按任意键继续.c</a>
+      <a href="files/报警.c">报警.c</a>
+      <a href="files/蹦迪.c">蹦迪.c</a>
+      <a href="files/变色.c">变色.c</a>
+      <a href="files/猜数.c">猜数.c</a>
+      <a href="files/创建文件.c">创建文件.c</a>
+      <a href="files/大窗口.c">大窗口.c</a>
+      <a href="files/定义并调用子函数.c">定义并调用子函数.c</a>
+      <a href="files/多开cmd.c">多开cmd.c</a>
+      <a href="files/多色.c">多色.c</a>
+      <a href="files/俄罗斯方块.c">俄罗斯方块.c</a>
+      <a href="files/二维数值元素为参数.c">二维数值元素为参数.c</a>
+      <a href="files/二维数组.c">二维数组.c</a>
+      <a href="files/关闭休眠.c">关闭休眠.c</a>
+      <a href="files/换页.c">换页.c</a>
+      <a href="files/加法计算.c">加法计算.c</a>
+      <a href="files/建窗口.c">建窗口.c</a>
+      <a href="files/健康简历.c">健康简历.c</a>
+      <a href="files/进度条后关机.c">进度条后关机.c</a>
+      <a href="files/进度条后响铃.c">进度条后响铃.c</a>
+      <a href="files/局部变量.c">局部变量.c</a>
+      <a href="files/快乐屋.c">快乐屋.c</a>
+      <a href="files/满屏.c">满屏.c</a>
+      <a href="files/迷宫.c">迷宫.c</a>
+      <a href="files/模拟XP.c">模拟XP.c</a>
+      <a href="files/目录管理.c">目录管理.c</a>
+      <a href="files/你好.c">你好.c</a>
+      <a href="files/逆序输出.c">逆序输出.c</a>
+      <a href="files/判断成绩.c">判断成绩.c</a>
+      <a href="files/判断奇偶.c">判断奇偶.c</a>
+      <a href="files/清理文件.c">清理文件.c</a>
+      <a href="files/清屏.c">清屏.c</a>
+      <a href="files/全局部变量使用.c">全局部变量使用.c</a>
+      <a href="files/任父.c">任父.c</a>
+      <a href="files/扫雷.c">扫雷.c</a>
+      <a href="files/数值名为参数.c">数值名为参数.c</a>
+      <a href="files/数值元素为参数.c">数值元素为参数.c</a>
+      <a href="files/贪吃蛇第二代.c">贪吃蛇第二代.c</a>
+      <a href="files/特性.c">特性.c</a>
+      <a href="files/跳转函数.c">跳转函数.c</a>
+      <a href="files/万能计算器.c">万能计算器.c</a>
+      <a href="files/文件目录扫描.c">文件目录扫描.c</a>
+      <a href="files/无限开cmd.c">无限开cmd.c</a>
+      <a href="files/五子棋.c">五子棋.c</a>
+      <a href="files/响铃.c">响铃.c</a>
+      <a href="files/星期.c">星期.c</a>
+      <a href="files/一分钟后关机.c">一分钟后关机.c</a>
+      <a href="files/一起执行.c">一起执行.c</a>
+      <a href="files/一维数组.c">一维数组.c</a>
+      <a href="files/用户头文件.c">用户头文件.c</a>
+      <a href="files/语句统计.c">语句统计.c</a>
+      <a href="files/远程连接.c">远程连接.c</a>
+      <a href="files/子函数声明.c">子函数声明.c</a>
+      <a href="files/自定义大小.c">自定义大小.c</a>
+      <a href="files/自定义名.c">自定义名.c</a>
+      <a href="files/字符数组.c">字符数组.c</a>
+      <a href="files/字符组输入与输出.c">字符组输入与输出.c</a>
+      <a href="files/D盘空文件清理.bat">D盘空文件清理.bat</a>
+      <a href="files/变脸.bat">变脸.bat</a>
+      <a href="files/查看c盘文件.bat">查看c盘文件.bat</a>
+      <a href="files/查看连接过的wifi.bat">查看连接过的wifi.bat</a>
+      <a href="files/查看系统文件结构.bat">查看系统文件结构.bat</a>
+      <a href="files/创建并合成并查找.bat">创建并合成并查找.bat</a>
+      <a href="files/创建文件.bat">创建文件.bat</a>
+      <a href="files/打开图片.bat">打开图片.bat</a>
+      <a href="files/打印爱心.bat">打印爱心.bat</a>
+      <a href="files/单行变色.bat">单行变色.bat</a>
+      <a href="files/调整窗口大小.bat">调整窗口大小.bat</a>
+      <a href="files/多开cmd.bat">多开cmd.bat</a>
+      <a href="files/恶搞.bat">恶搞.bat</a>
+      <a href="files/反倒上个目录.bat">反倒上个目录.bat</a>
+      <a href="files/高级修复.bat">高级修复.bat</a>
+      <a href="files/关机.bat">关机.bat</a>
+      <a href="files/管理员模式.bat">管理员模式.bat</a>
+      <a href="files/合并文件.bat">合并文件.bat</a>
+      <a href="files/检测网址可通性.bat">检测网址可通性.bat</a>
+      <a href="files/朗读.bat">朗读.bat</a>
+      <a href="files/模拟xp.bat">模拟xp.bat</a>
+      <a href="files/模拟任务条.bat">模拟任务条.bat</a>
+      <a href="files/清理盘符.bat">清理盘符.bat</a>
+      <a href="files/删除以合成此文件.bat">删除以合成此文件.bat</a>
+      <a href="files/时间.bat">时间.bat</a>
+      <a href="files/统计所有c视频.bat">统计所有c视频.bat</a>
+      <a href="files/无限变色.bat">无限变色.bat</a>
+      <a href="files/无限打开cmd.bat">无限打开cmd.bat</a>
+      <a href="files/系统扫描.bat">系统扫描.bat</a>
+      <a href="files/显示文件内容.bat">显示文件内容.bat</a>
+      <a href="files/小代码雨.bat">小代码雨.bat</a>
+      <a href="files/新建txt.bat">新建txt.bat</a>
+      <a href="files/修复系统文件.bat">修复系统文件.bat</a>
+      <a href="files/隐藏按任意建结束.bat">隐藏按任意建结束.bat</a>
+      <a href="files/远程控制.bat">远程控制.bat</a>
+      <a href="files/重启.bat">重启.bat</a>
+      <a href="files/主题.bat">主题.bat</a>
+      <a href="files/注释.bat">注释.bat</a>
+      <a href="files/E盘中新创txt.vbs">E盘中新创txt.vbs</a>
+      <a href="files/查看电脑性别.vbs">查看电脑性别.vbs</a>
+      <a href="files/成绩标准.vbs">成绩标准.vbs</a>
+      <a href="files/计算器.vbs">计算器.vbs</a>
+      <a href="files/记忆表.vbs">记忆表.vbs</a>
+      <a href="files/间隔循环3至10次.vbs">间隔循环3至10次.vbs</a>
+      <a href="files/叫爸爸.vbs">叫爸爸.vbs</a>
+      <a href="files/密码循环.vbs">密码循环.vbs</a>
+      <a href="files/你好.vbs">你好.vbs</a>
+      <a href="files/删除指定文件.vbs">删除指定文件.vbs</a>
+      <a href="files/刷屏工具.vbs">刷屏工具.vbs</a>
+      <a href="files/无限循环.vbs">无限循环.vbs</a>
+      <a href="files/新建bat.vbs">新建bat.vbs</a>
+      <a href="files/循环10次.vbs">循环10次.vbs</a>
+      <a href="files/移动也重命名文件.vbs">移动也重命名文件.vbs</a>
+      <a href="files/cmd指令.txt">cmd指令.txt</a>
+      <a href="files/2408.py">2408.py</a>
+      <a href="files/http检测.py">http检测.py</a>
+      <a href="files/PCAP 流量分析脚本.py">PCAP 流量分析脚本.py</a>
+      <a href="files/script.py">script.py</a>
+      <a href="files/script1.py">script1.py</a>
+      <a href="files/猜字游戏.py">猜字游戏.py</a>
+      <a href="files/打字测速.py">打字测速.py</a>
+      <a href="files/弹窗输出.py">弹窗输出.py</a>
+      <a href="files/弹窗输入.py">弹窗输入.py</a>
+      <a href="files/调用cmd.py">调用cmd.py</a>
+      <a href="files/调整长宽.py">调整长宽.py</a>
+      <a href="files/端口扫描.py">端口扫描.py</a>
+      <a href="files/多行多色.py">多行多色.py</a>
+      <a href="files/二维码.py">二维码.py</a>
+      <a href="files/简易爬虫.py">简易爬虫.py</a>
+      <a href="files/键盘检测.py">键盘检测.py</a>
+      <a href="files/接受用户移动命令.py">接受用户移动命令.py</a>
+      <a href="files/模拟打字.py">模拟打字.py</a>
+      <a href="files/年龄判断.py">年龄判断.py</a>
+      <a href="files/碰撞测试增强版.py">碰撞测试增强版.py</a>
+      <a href="files/清理C盘以外的空文件.py">清理C盘以外的空文件.py</a>
+      <a href="files/输出不换行.py">输出不换行.py</a>
+      <a href="files/输出你好.py">输出你好.py</a>
+      <a href="files/鼠标轨迹追踪器.py">鼠标轨迹追踪器.py</a>
+      <a href="files/鼠标连点器.py">鼠标连点器.py</a>
+      <a href="files/贪吃蛇.py">贪吃蛇.py</a>
+      <a href="files/万能计算器.py">万能计算器.py</a>
+      <a href="files/文本翻译有调用限制.py">文本翻译有调用限制.py</a>
+      <a href="files/显示对应ASII.py">显示对应ASII.py</a>
+      <a href="files/显示在中间.py">显示在中间.py</a>
+      <a href="files/一行多色.py">一行多色.py</a>
+      <a href="files/音乐播放器.py">音乐播放器.py</a>
+      <a href="files/用户输入长宽.py">用户输入长宽.py</a>
+      <a href="files/抓包.py">抓包.py</a>
+      <a href="files/子域扫描器.py">子域扫描器.py</a>
+      <a href="files/字体变色.py">字体变色.py</a>
+      <a href="files/座面闹钟.py">座面闹钟.py</a>
+      </div>
+    </details>
+    <!--SEO-LIST:END-->
+  </div>
+</section>
+
+<footer>
+  © 2026 程序员纪福瑞 · JIFURUI — BUILT WITH PASSION, NOT JUST CODE.
+</footer>
+
+<!-- 本页不放置背景音乐播放器：全站背景音乐只在首页 index.html 提供 -->
+
+<!-- Toast -->
+<div id="toast" style="
+  position:fixed; left:50%; bottom:44px; transform:translate(-50%,30px);
+  padding:14px 26px; border-radius:999px; z-index:99;
+  background:linear-gradient(100deg,var(--red),var(--blue));
+  color:#fff; font-weight:700; font-size:14px; letter-spacing:.06em;
+  box-shadow:0 16px 40px rgba(0,0,0,.5);
+  opacity:0; pointer-events:none; transition:opacity .4s, transform .4s;">
+</div>
+
+<script src='cursor.js'></script>
+<script src='progress.js'></script>
+<script src='app.js'></script>
+<script>
+  /* 分类过滤：点击标签即时筛选 */
+  (function(){
+    const items = Array.from(document.querySelectorAll('.proj'));
+    const filters = Array.from(document.querySelectorAll('.filters .tag'));
+    filters.forEach(f => {
+      f.addEventListener('click', () => {
+        const cat = f.dataset.filter;
+        filters.forEach(x => x.classList.toggle('on', x === f));
+        items.forEach(it => {
+          const show = cat === 'all' || it.dataset.cat === cat;
+          it.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  })();
+
+  /* 直接双击 html（file://）打开时浏览器会忽略 download 属性，给出提示 */
+  (function(){
+    if(location.protocol !== 'file:') return;
+    document.querySelectorAll('.file-tip').forEach(el => { el.hidden = false; });
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a.dl-btn, a[download]');
+      if(!a || !a.getAttribute('href') || a.getAttribute('href') === '#') return;
+      e.preventDefault();
+      window.open(a.getAttribute('href'), '_blank');
+      const t = document.getElementById('toast');
+      if(t){
+        t.textContent = 'file:// 下不能自动下载，请双击「启动本地服务器.bat」';
+        t.style.opacity = '1';
+        t.style.transform = 'translate(-50%, 0)';
+        clearTimeout(t._timer);
+        t._timer = setTimeout(() => {
+          t.style.opacity = '0';
+          t.style.transform = 'translate(-50%, 30px)';
+        }, 3200);
+      }
+    }, true);
+  })();
+
+  /* 资源下载：按 files.js 里的清单渲染卡片，点击即可保存到本地 */
+  (function(){
+    const grid  = document.getElementById('dl-grid');
+    const empty = document.getElementById('dl-empty');
+    const count = document.getElementById('dl-count');
+    if(!grid) return;
+
+    const tabs  = document.getElementById('dl-tabs');
+    const searchBox = document.getElementById('dl-search');
+    const more  = document.getElementById('dl-more');
+    const batch = document.getElementById('dl-batch');
+
+    const ALL = (Array.isArray(window.SITE_FILES) ? window.SITE_FILES : []).filter(f => f && f.p);
+    const GROUP_ORDER = Array.isArray(window.SITE_FILE_GROUPS) ? window.SITE_FILE_GROUPS : [];
+    const PAGE = 30;
+    let curGroup = '全部', kw = '', shown = PAGE;
+
+    const ICONS = {zip:'🗜', rar:'🗜', '7z':'🗜', pdf:'📕', txt:'📄', md:'📄', doc:'📘', docx:'📘',
+      xls:'📗', xlsx:'📗', png:'🖼', jpg:'🖼', jpeg:'🖼', gif:'🖼', mp3:'🎵', wav:'🎵', mp4:'🎬',
+      exe:'⚙', msi:'⚙', js:'📜', vbs:'📜', bat:'📜', ps1:'📜', py:'🐍', html:'🌐', css:'🎨', json:'📋'};
+
+    function extOf(file){ return ((file.split('/').pop() || '').split('.').pop() || '').toLowerCase(); }
+    function iconOf(file){ return ICONS[extOf(file)] || '📦'; }
+    function fmtSize(n){
+      n = Number(n);
+      if(!isFinite(n) || n <= 0) return '';
+      const u = ['B', 'KB', 'MB', 'GB'];
+      let i = 0;
+      while(n >= 1024 && i < u.length - 1){ n /= 1024; i++; }
+      return (i === 0 ? n : n.toFixed(n < 10 ? 2 : 1)) + ' ' + u[i];
+    }
+    function toast(msg){
+      const t = document.getElementById('toast');
+      if(!t) return;
+      t.textContent = msg;
+      t.style.opacity = '1';
+      t.style.transform = 'translate(-50%, 0)';
+      clearTimeout(t._timer);
+      t._timer = setTimeout(() => {
+        t.style.opacity = '0';
+        t.style.transform = 'translate(-50%, 30px)';
+      }, 2400);
+    }
+
+    if(!ALL.length){ empty.hidden = false; return; }
+
+    const totalSize = ALL.reduce((s, f) => s + (Number(f.s) || 0), 0);
+    count.textContent = '共 ' + ALL.length + ' 个文件 · ' + (fmtSize(totalSize) || '—');
+
+    /* 项目卡片右下角挂上对应分组：点一下跳到下载区并自动筛选 */
+    const PROJ_GROUPS = { 2: 'VBS 语言', 3: '批处理脚本', 4: '用户交互 / 游戏', 5: 'C 源码', 6: '文档' };
+    Object.keys(PROJ_GROUPS).forEach(k => {
+      const g = PROJ_GROUPS[k];
+      const n = ALL.filter(f => f.g === g).length;
+      if(!n) return;
+      const card = document.querySelectorAll('.proj')[Number(k) - 1];
+      const foot = card && card.querySelector('.proj-foot');
+      if(!foot) return;
+      const a = document.createElement('a');
+      a.className = 'proj-link';
+      a.href = '#downloads';
+      a.textContent = '下载相关文件 ' + n + ' 个 ↓';
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        searchBox.value = '';
+        kw = '';
+        pickGroup(g);
+      });
+      const placeholder = foot.lastElementChild;
+      if(placeholder && placeholder.tagName === 'SPAN' && placeholder.classList.contains('proj-link')){
+        foot.replaceChild(a, placeholder);          // 顶掉「本地工程」这类占位文字
+      }else{
+        foot.appendChild(a);
+      }
+    });
+
+    /* 分组标签 */
+    const groups = ['全部'].concat(GROUP_ORDER.length ? GROUP_ORDER : [...new Set(ALL.map(f => f.g))]);
+    groups.forEach(g => {
+      const n = g === '全部' ? ALL.length : ALL.filter(f => f.g === g).length;
+      if(!n) return;
+      const b = document.createElement('span');
+      b.className = 'tag';
+      b.dataset.group = g;
+      b.textContent = g + ' ' + n;
+      b.addEventListener('click', () => pickGroup(g));
+      tabs.appendChild(b);
+    });
+
+    function pickGroup(g){
+      curGroup = g;
+      shown = PAGE;
+      tabs.querySelectorAll('.tag').forEach(t => t.classList.toggle('on', t.dataset.group === g));
+      draw();
+      if(g !== '全部') document.getElementById('downloads').scrollIntoView({behavior:'smooth'});
+    }
+    function hits(){
+      return ALL.filter(f => (curGroup === '全部' || f.g === curGroup) &&
+        (!kw || f.n.toLowerCase().includes(kw)));
+    }
+    function makeCard(f){
+      const card = document.createElement('article');
+      card.className = 'dl-card';
+
+      const ic = document.createElement('div');
+      ic.className = 'dl-icon';
+      ic.textContent = iconOf(f.p);
+
+      const main = document.createElement('div');
+      main.className = 'dl-main';
+      const nm = document.createElement('div');
+      nm.className = 'dl-name';
+      nm.textContent = f.n;
+      nm.title = f.n;
+      const ds = document.createElement('div');
+      ds.className = 'dl-desc';
+      ds.textContent = f.p.replace(/^files\//, '');
+      const meta = document.createElement('div');
+      meta.className = 'dl-meta';
+      const e1 = document.createElement('span');
+      e1.textContent = f.g;
+      const e2 = document.createElement('span');
+      e2.textContent = fmtSize(f.s) || '—';
+      meta.appendChild(e1); meta.appendChild(e2);
+      main.appendChild(nm); main.appendChild(ds); main.appendChild(meta);
+
+      const btn = document.createElement('a');
+      btn.className = 'dl-btn';
+      btn.href = f.p;
+      btn.setAttribute('download', '');
+      btn.textContent = '下载';
+      btn.title = '下载 ' + f.n;
+      btn.addEventListener('click', () => toast('开始下载：' + f.n));
+
+      card.appendChild(ic); card.appendChild(main); card.appendChild(btn);
+      return card;
+    }
+    function draw(){
+      const list = hits();
+      grid.replaceChildren();
+      if(!list.length){
+        empty.hidden = false;
+        more.hidden = true;
+        return;
+      }
+      empty.hidden = true;
+      list.slice(0, shown).forEach(f => grid.appendChild(makeCard(f)));
+      more.hidden = list.length <= shown;
+      more.textContent = '加载更多（还有 ' + Math.max(0, list.length - shown) + ' 个）';
+    }
+
+    searchBox.addEventListener('input', () => {
+      kw = searchBox.value.trim().toLowerCase();
+      shown = PAGE;
+      draw();
+    });
+    more.addEventListener('click', () => { shown += PAGE; draw(); });
+    batch.addEventListener('click', () => {
+      const list = hits();
+      if(!list.length) return;
+      if(location.protocol === 'file:'){
+        toast('file:// 下浏览器禁止自动下载，请双击「启动本地服务器.bat」后再批量下载');
+        return;
+      }
+      if(list.length > 60 && !confirm('将依次下载 ' + list.length + ' 个文件，浏览器可能提示"是否允许下载多个文件"。继续吗？')) return;
+      list.forEach((f, i) => setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = f.p;
+        a.setAttribute('download', '');
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }, i * 200));
+      toast('已开始下载 ' + list.length + ' 个文件：' + curGroup);
+    });
+
+    pickGroup('全部');
+  })();
+</script>
+</body>
+</html>

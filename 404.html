@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 · 这行代码跑丢了 ｜ 程序员纪福瑞</title>
+<meta name="robots" content="noindex,follow">
+<link rel='stylesheet' href='style.css'>
+<style>
+  .nf{position:relative; z-index:2; min-height:100vh; display:grid; place-items:center; text-align:center; padding:120px 24px;}
+  .nf-code{font-family:var(--mono); font-size:clamp(80px,18vw,190px); font-weight:900; line-height:1;
+    background:linear-gradient(100deg,var(--red),var(--blue)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .nf-title{font-size:clamp(22px,4vw,34px); font-weight:900; margin:18px 0 12px;}
+  .nf-desc{font-size:15px; line-height:2; color:rgba(255,255,255,.75); max-width:520px; margin:0 auto 10px;}
+  .nf-log{font-family:var(--mono); font-size:12.5px; color:#7dffb2; text-shadow:0 0 12px rgba(0,255,150,.4);
+    margin:22px auto 30px; white-space:pre-wrap; max-width:520px;}
+  .nf-btns{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+  .nf-tip{margin-top:22px; font-family:var(--mono); font-size:12px; letter-spacing:.16em; color:rgba(255,255,255,.5);}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <div class="bg-core"></div>
+  <div class="bg-fade"></div>
+  <div class="bg-blobs"><span class="blob r"></span><span class="blob b"></span><span class="blob p"></span></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-vignette"></div>
+</div>
+
+<main class="nf">
+  <div>
+    <div class="nf-code">404</div>
+    <h1 class="nf-title">这行代码跑丢了</h1>
+    <p class="nf-desc">
+      你访问的页面不存在 —— 但别慌，找不到路的时候，<br>
+      我一般是先 <b>console.log</b> 一下，再重新跑一遍。
+    </p>
+    <div class="nf-log" id="nfLog"></div>
+    <div class="nf-btns">
+      <a href="index.html" style="text-decoration:none"><button class="btn">回到首页 <span class="arrow">→</span></button></a>
+      <a href="projects.html" style="text-decoration:none"><button class="btn ghost">看看我的项目</button></a>
+      <a href="relax.html" style="text-decoration:none"><button class="btn ghost">放松一下</button></a>
+    </div>
+    <div class="nf-tip" id="nfTip">3 秒后自动带你回到首页…</div>
+  </div>
+</main>
+
+<script>
+(function(){
+  var lines = [
+    '> GET ' + location.pathname,
+    '> 404 NOT FOUND  —— 页面没被编译进这个世界',
+    '> 也许它还在我的下一个 commit 里…'
+  ];
+  var box = document.getElementById('nfLog'), i = 0;
+  var t = setInterval(function(){
+    box.textContent += (i ? '\n' : '') + lines[i];
+    if(++i >= lines.length) clearInterval(t);
+  }, 320);
+  var left = 3, tip = document.getElementById('nfTip');
+  var c = setInterval(function(){
+    left--;
+    if(left <= 0){ clearInterval(c); location.href = 'index.html'; }
+    else tip.textContent = left + ' 秒后自动带你回到首页…';
+  }, 1000);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+calc 计算器
+chrmap 映射表
+shutdown-30 重起
+compmgmt 计算机管理
+comexp组件服务
+control 控制面板
+eventvwr事件查看器
+gpedit 主策略
+appwiz.cpl程序和功能
+Dccw颜色校准
+devmgmt.msc设备管理器
+dfrgui优化驱动器 Win 7→dfrg.msc：磁盘碎片整理程序
+diskmgmt.msc磁盘管理
+dxdiag检查DirectX信息
+eudcedit造字程序
+Firewall.cpl防火墙
+inetcpl.cpl属性
+iexpress木马捆绑工具
+main.cpl鼠标属性
+mmsys.cpl声音
+magnify放大镜实用程序
+mem显示内存运用情况
+MdSched内存诊断程序
+mmc控制台
+msdt支持诊断
+msinfo32系统信息
+
+
+bat格式
+ 基本框架  echo off
+          pause
+ 显示字幕Echo
+ 接入对应网址start http:
+cmd指令行面板
+ 扫描dir/s
+ 重复之%0
+vbs格式
+ 多指令执行码Set ws=WScript.Create0dject"(WScript.Shell")
+ 暂时休眠后在运行下方指令wscript. sleep (毫秒或毫秒*毫秒或毫秒-毫秒或毫秒/毫秒或毫秒+毫秒)1秒=1000毫秒
+  运算符号如下
+             +=加，加法格式不统一，需要特殊格式
+             -=减
+             /=除
+             *=乘
+ 结束end if
+ 函数变量，列举，带入dim
+ 显示字幕msgbox
+ 按键数值以下
+            1=确定
+            2=取消
+            3=中止
+            4=重试
+            5=忽略
+            6=是
+            7=否
+ 如果，变量if
+ 则，那么then
+ 因此else
+ 词义相加&
+ 循环do
+     loop
+  图标弹窗如下
+             16=错误
+             32=问号
+             48=感叹号
+             64=信息
+ 输入框inputbox
+文件目录C为主盘
+        盘符对应:
+        目录集结//
+        windows系统文件类型如下
+                             系统功能system
+                             主要文件windows
+                             指令行类AMD64或intel
+                             驱动软文件Dvivers
+                             基础文件Progranme
+中文编码AHSI
+命令行CMD或运行(提示符或command)输入如下
+                激活密钥组 slmgr /ipk (密钥)
+                          lmgr /skms kms.03org
+                          slmgr /ato
+                60秒计时关机sutdown
+                组策略gpedit.Microsoft
+                资源管理explorer
+                记事本notepad
+                计算机管理compmgmt.msc 
+                系统医生drwtsn32
+                木马捆绑工具iexpress
+                屏幕键盘osk
+                任务管理器taskmgr(XP/2000/2003)
+                检查windows版本winmsd
+                磁盘清理cleanmgr
+                磁盘检查chkdsk
+                系统文件检测SFC
+                磁盘碎片整理dfrg.msc
+                检查DirectX信息dxdiag
+                性能监视器perfmon.msc
+                程序管理progman
+                扫描并复原错误.sfc /scannow
+                windows文件保护.sf/scannow
+  环境变量win+R 输入如下
+                      注册表编辑器regedit
+
+报错处理如下
+           脚本=文件所在位置
+           行=错误所在行
+           字符=错误所在列
+           代码=错误码
+           源=Microsoft VBScript 编辑器错误=.VBS格式
+              Microsoft BATcript 编辑器错误=.BAT格式
+              Microsoft EXEcript 编辑器错误=.EXE格式
+              Microsoft CMdcript 编辑器错误=.Cmd格式
+
+
+cmd是power shell的子集。
+不区分大小写
+按上下键可以查看历史命令
+Tab键补全
+/?`或/hel`查看命令用法，[]代表可选
+命令基本格式命令 参数列表
+pause | 暂停 | pause > nul 
+exit| 退出 
+type | 显示文件内容  |type 1.txt 
+find     | 查找字符串    |find "abc" 2.txt 
+fc| 比较文件内容  | fc 1.txt 2.txt  
+date | 显示/修改日期 |date /T 
+| `time`     | 显示/修改时间 | `time /T`            
+| `ping`     | 网络连接测试  | `ping www.baidu.com` 
+| `ipconfig` | TCP/IP信息    
+| `set /a`   | 计算表达式    | `set /a 6%4`         
+| `shutdown` | 关机          | `shutdown /s /t 60`  
+
+
+&  顺序执行多条命令，不管命令是否执行成功
+&& 顺序执行多条命令，前面的命令错误则不执行后面的命令
+|| 顺序执行多条命令，碰到执行正确的命令后将不执行后面的命令
+
+abc & dir & bcd
+abc && dir && bcd
+abc || dir || bcd
+
+
+
+>  输出重定向
+>> 追加重定向
+<  输入重定向
+
+date /t > 1.txt
+time /t >> 1.txt
+find "/" < 1.txt
+
+
+```bash
+|前一个命令的输出作为后一个命令的输入
+
+dir | find "txt"
+```
+
+
+路径分隔符**：`\`
+
+当前目录**：`.`
+
+上一级目录**：`..`
+
+| `dir`           | 显示文件夹内容     | `dir /A`                       
+| `tree`          | 显示文件夹树形结构 | `tree /F`                      
+| `盘符:`         | 进入指定磁盘       | `c:` `d:`                      
+| `cd`            | 切换目录           | `cd test` `cd ..`              
+| `mkdir`或`md`   | 创建目录           | `mkdir test`                   
+| `rmdir`或`rd`   | 删除目录           | `rmdir test`                   
+| `del`           | 删除文件           | `del 1.txt` `del /q/a/f *.txt` 
+| `rename`或`ren` | 重命名             | `rename a.txt b.txt`           
+| `copy`          | 复制文件           | `copy a\1.txt b\1.txt`         
+| `move`          | 移动文件/重命名    | `move a\1.txt 2.txt`           
+
+
+```bash
+@echo off		 关闭回显
+
+ 运行方式
+
+- 双击运行
+- 在cmd中运行（可以传参）
+变量
+
+```bash
+设置变量
+set 变量名=变量值
+set /a 变量名=表达式
+
+取消变量
+set 变量名=
+
+打印变量
+set 变量名
+
+ 列出变量
+set
+
+引用变量
+%变量名%
+
+ 输入变量值
+set /p 变量名=提示文字
+```
+
+
+
+
+| `%cd%`             | 当前目录                          
+| `%date%`           | 当前日期                          
+| `%time%`           | 当前时间                          
+| `%random%`         | 0~32767之间的随机数               
+| `%path%`           | 环境变量                          
+| `%errorlevel%`     | 上一个命令的返回值，0表示执行成功 
+| `%0`、`%1`、`%2`…… | 参数。`%0`表示命令名              
+
+ 调用
+
+```bash
+call 可执行文件 [参数列表]
+```
+
+ 条件
+
+```bash
+if [not] 条件 (
+	语句块
+) else (
+	语句块
+)
+
+条件：
+errorlevel number	上一个程序的返回值大于等于number则为true
+string1==string2	# 两个字符串匹配则为true
+exist filename		 文件名存在则为true
+[/I] string1 compare-op string2		 比较数值或字符串
+	 /I	忽略大小写
+	 compare-op包括：
+		equ	等于
+	 	neq	不等于
+		lss	小于
+		leq	小于等于
+		gtr	大于
+		geq	大于等于
+defined variable	# 如果定义了该变量则为true
+```
+
+ 跳转
+
+```bash
+goto label		# 跳转到标签所在行
+:label			# 标签以冒号开头
+```
+
+循环
+
+
+
+```bash
+for %%i in (set) do (
+	语句块
+)
+
+ 循环变量用 %% 指定，只能是单字母
+ set表示文件集合（也可以是空文件），元素之间以逗号或空格分隔，支持通配符
+
+for %%i in (a,b,c) do (echo %%i)
+for %%i in (*.*) do (echo %%i)
+```
+
+
+
+只遍历文件夹
+
+    ```bash
+    for /d %%i in (set) do
+    ```
+
+遍历指定文件夹下的所有文件，不指定则表示当前目录。如果set为`.`表示枚举目录树
+
+    ```bash
+    for /r [[drive:]path] %%i in (set) do
+    
+    for /r %%i in (*) do (echo %%i)
+    for /r d:\up %%i in (.) do (echo %%i)
+    ```
+
+遍历数字序列
+
+    ```bash
+    for /l %%i in (start,step,end) do
+    ```
+
+遍历文件内容
+
+    ```bash
+    for /f ["options"] %%i in (set) do
+    ```
+通配符
+
+```bash
+?		单个字符
+*		任意字符
+```
+例子
+
+按顺序为文件夹中的文件命名。
+
+[批处理中for循环的自增自减问题_Dandelion_gong的博客-CSDN博客_bat for 自增](https://blog.csdn.net/Dandelion_gong/article/details/78067501)
+
+@echo off
+setlocal enabledelayedexpansion
+set cnt=0
+for %%i in (%1) do (
+    rename %%i !cnt!.txt
+    set /a cnt=!cnt! + 1
+)
+pause
+
+

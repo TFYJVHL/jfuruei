@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# 音频库体积大且无搜索价值，不进索引（不影响页面播放）
+Disallow: /music/
+# 本地脚本与配置不参与收录
+Disallow: /*.ps1
+Disallow: /*.bat
+Disallow: /settings.local.json
+
+Sitemap: https://jifurui.github.io/sitemap.xml

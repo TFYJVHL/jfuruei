@@ -1,0 +1,1 @@
+@dir > 1.txt /s/a/b c:\*.mp4

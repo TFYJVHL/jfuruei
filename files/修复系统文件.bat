@@ -1,0 +1,2 @@
+chkdsk
+pause
